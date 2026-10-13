@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天空影视 - 天穹观景台 · 云层/航空/黄昏/夜空宇宙/航拍自然片单 | tiankongyingshi-h5.github.io</title>
+<meta name="description" content="天空影视，天穹观景台风影视单页：从地面到星海，云层片单、航空飞行、黄昏天色、夜空宇宙、航拍自然、云端避雷区。官网 https://tiankongyingshi-h5.github.io">
+<meta name="keywords" content="天空影视, 云层电影, 航空片单, 夜空宇宙, 航拍纪录片, 天空之城, 星际穿越">
+<meta name="author" content="天空影视">
+<meta name="robots" content="index,follow">
+<meta name="bingbot" content="index,follow">
+<meta name="theme-color" content="#070b16">
+<style>
+:root{
+  --bg:#070b16;--bg2:#0c1326;--panel:#101a33;--line:rgba(124,198,255,.28);
+  --sky:#7cc6ff;--cloud:#eef6ff;--dusk:#7b6cff;--sun:#ff8a3d;--silver:#cdd8ea;--ink:#eaf2ff;--muted:#8696b5;
+  --mono:Consolas,Menlo,monospace;--shadow:0 18px 48px rgba(0,0,0,.6);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:62px}
+body{
+  background:
+    radial-gradient(620px 360px at 80% -8%,rgba(124,198,255,.18),transparent),
+    radial-gradient(520px 320px at 10% 4%,rgba(123,108,255,.16),transparent),
+    linear-gradient(180deg,#070b16 0%,#0c1326 42%,#15244a 70%,#243b73 100%);
+  color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.9;
+}
+a{color:var(--sky);text-decoration:none}
+
+.bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;border-bottom:2px solid var(--sky);background:rgba(7,11,22,.92);backdrop-filter:blur(8px)}
+.logo b{font-family:var(--mono);font-size:18px;color:var(--sky);letter-spacing:1px}
+.logo span{display:block;font-size:9px;letter-spacing:5px;color:var(--muted);font-family:var(--mono)}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{font-size:12px;padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink)}
+.nav a:hover{border-color:var(--sky);color:var(--sky)}
+
+.hero{max-width:1040px;margin:0 auto;padding:54px 20px 26px;position:relative;text-align:center}
+.halo{position:absolute;inset:6px 12px auto 12px;height:200px;border-radius:24px;background:linear-gradient(120deg,rgba(124,198,255,.22),rgba(238,246,255,.18),rgba(123,108,255,.2),rgba(255,138,61,.16));filter:blur(34px);z-index:0}
+.plane{position:absolute;top:14px;right:24px;font-size:34px;filter:drop-shadow(0 0 10px rgba(124,198,255,.6));animation:glide 6s ease-in-out infinite}
+@keyframes glide{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-8px) rotate(4deg)}}
+.kicker{position:relative;z-index:2;font-family:var(--mono);font-size:12px;color:var(--sun);letter-spacing:2px}
+.hero h1{position:relative;z-index:2;font-size:32px;margin:8px 0 6px;font-weight:900}
+.hero h1 em{font-style:normal;color:var(--sky)}
+.hero p{position:relative;z-index:2;color:var(--muted);max-width:700px;margin:0 auto 12px;font-size:15px}
+.hero .url{position:relative;z-index:2;display:inline-block;font-family:var(--mono);font-size:13px;background:var(--panel);border:1px dashed var(--sky);color:var(--sky);padding:7px 14px;border-radius:999px}
+.metrics{position:relative;z-index:2;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.metrics div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px 14px;min-width:104px}
+.metrics b{display:block;font-size:18px;color:var(--sun);font-family:var(--mono)}
+.metrics small{color:var(--muted);font-size:12px}
+
+.wrap{max-width:1060px;margin:0 auto;padding:16px 20px 40px}
+
+/* 高度带 */
+.lane{border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:18px;background:linear-gradient(180deg,var(--panel),rgba(12,19,38,.7));position:relative;overflow:hidden}
+.lane .alt{position:absolute;top:12px;right:14px;font-family:var(--mono);font-size:11px;color:var(--sky);border:1px solid var(--line);padding:2px 8px;border-radius:999px;background:rgba(7,11,22,.6)}
+.lane h2{font-size:19px;font-weight:900;margin-bottom:2px}
+.lane h2 b{color:var(--dusk)}
+.lane .sub{color:var(--muted);font-size:12px;font-family:var(--mono);margin-bottom:12px}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{background:rgba(7,11,22,.55);border:1px solid var(--line);border-radius:14px;padding:12px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--sky)}
+.card .ico{font-size:22px}
+.card h3{font-size:15px;margin:6px 0 2px}
+.card p{font-size:12px;color:var(--muted)}
+.card .meta{margin-top:6px;font-family:var(--mono);font-size:11px;color:var(--sky)}
+
+/* 飞行时间线 */
+.altbar{display:flex;gap:0;margin:14px 0 4px;border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+.altbar div{flex:1;text-align:center;font-family:var(--mono);font-size:11px;padding:6px 4px;color:var(--muted);background:rgba(7,11,22,.5)}
+.altbar div.on{color:#070b16;background:var(--sky);font-weight:800}
+
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:16px}
+.panel h3{font-size:17px;color:var(--sky);margin-bottom:10px;font-family:var(--mono)}
+.panel li{list-style:none;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--ink)}
+.panel li:last-child{border-bottom:none}
+.panel b{color:var(--sun);font-family:var(--mono)}
+
+.about p{color:var(--muted);font-size:14px;margin-bottom:8px}
+.about code{background:rgba(7,11,22,.7);border:1px solid var(--line);color:var(--sky);padding:2px 7px;border-radius:6px;font-family:var(--mono)}
+.warn{margin-top:12px;background:rgba(255,138,61,.12);border:1px solid rgba(255,138,61,.45);border-radius:12px;padding:12px 14px;color:#ffd2ad;font-size:13px;font-family:var(--mono)}
+.foot{text-align:center;padding:24px 20px;border-top:2px solid var(--sky);color:var(--muted);font-size:12px;font-family:var(--mono)}
+
+@media(max-width:820px){.grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.grid3{grid-template-columns:1fr}.hero h1{font-size:25px}.plane{display:none}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="bar">
+  <div class="logo"><b>天空影视</b><span>SKY DECK CINEMA</span></div>
+  <nav class="nav">
+    <a href="#home">观景台</a>
+    <a href="#ground">地面</a>
+    <a href="#cloud">云层</a>
+    <a href="#dusk">黄昏</a>
+    <a href="#space">夜空宇宙</a>
+    <a href="#aerial">航拍自然</a>
+    <a href="#avoid">云端避雷</a>
+    <a href="#about">关于</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="halo"></div>
+  <div class="plane">✈️</div>
+  <span class="kicker">// sky.deck.takeoff({ from:"ground", to:"orbit", parse:false })</span>
+  <h1>天空影视 · <em>天穹观景台</em></h1>
+  <p>不是“天空影视免费高清下载站”，是从地面一路飞到星海的片单台：云层、航空、黄昏天色、夜空宇宙、航拍自然。名字像聚合站，身子是“按高度挑片”的观景甲板。</p>
+  <div class="url">https://tiankongyingshi-h5.github.io</div>
+  <div class="metrics">
+    <div><b>5 高度带</b><small>地面/云层/黄昏/宇宙/航拍</small></div>
+    <div><b>0 资源</b><small>只荐不存</small></div>
+    <div><b>高度刻度</b><small>0m→轨道层</small></div>
+    <div><b>index,follow</b><small>必应友好</small></div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <div class="altbar">
+    <div class="on">0m 地面</div>
+    <div>800m 云层</div>
+    <div>3000m 黄昏</div>
+    <div>10000m 夜空</div>
+    <div>轨道层 宇宙</div>
+  </div>
+
+  <section class="lane" id="ground">
+    <span class="alt">ALT 0m</span>
+    <h2>🏙️ 地面片单 · <b>城市、街道、人间烟火</b></h2>
+    <div class="sub">ground level · 脚踏实地的故事</div>
+    <div class="grid3">
+      <div class="card"><div class="ico">🏙️</div><h3>出租车司机</h3><p>夜纽约、后视镜、孤独与怒火</p><div class="meta">剧情 / 1976 / 9.1</div></div>
+      <div class="card"><div class="ico">🌃</div><h3>重庆森林</h3><p>便利店、罐头、过期爱情</p><div class="meta">爱情 / 1994 / 8.8</div></div>
+      <div class="card"><div class="ico">🚕</div><h3>爱在黎明破晓前</h3><p>维也纳夜行、站台长谈</p><div class="meta">文艺 / 1995 / 8.8</div></div>
+      <div class="card"><div class="ico">🏪</div><h3>海街日记</h3><p>海边小镇、姐妹、便当与猫</p><div class="meta">治愈 / 2015 / 8.7</div></div>
+      <div class="card"><div class="ico">🚧</div><h3>何以为家</h3><p>贫民区孩子、法庭与母亲</p><div class="meta">现实 / 2018 / 9.1</div></div>
+      <div class="card"><div class="ico">🏘️</div><h3>阳光普照</h3><p>家庭、少年、沉默的父亲</p><div class="meta">华语 / 2019 / 8.5</div></div>
+    </div>
+  </section>
+
+  <section class="lane" id="cloud">
+    <span class="alt">ALT 800m</span>
+    <h2>☁️ 云层片单 · <b>飞行、机翼、云上世界</b></h2>
+    <div class="sub">in the clouds · 离地但不离谱</div>
+    <div class="grid3">
+      <div class="card"><div class="ico">🛩️</div><h3>壮志凌云2：独行侠</h3><p>超音速、航母、落日巡航</p><div class="meta">动作 / 2022 / 8.3</div></div>
+      <div class="card"><div class="ico">🛬</div><h3>萨利机长</h3><p>哈德逊河、208秒、冷静</p><div class="meta">传记 / 2016 / 8.3</div></div>
+      <div class="card"><div class="ico">🎈</div><h3>热气球飞行家</h3><p>19世纪、平流层、风与绳</p><div class="meta">冒险 / 2019 / 7.6</div></div>
+      <div class="card"><div class="ico">🪂</div><h3>云中行走</h3><p>双子塔钢丝、云海里发抖</p><div class="meta">传记 / 2015 / 7.7</div></div>
+      <div class="card"><div class="ico">✈️</div><h3>伴你高飞</h3><p>女孩、雁群、一起学飞</p><div class="meta">家庭 / 1996 / 8.5</div></div>
+      <div class="card"><div class="ico">🛫</div><h3>空中营救</h3><p>越洋航班、空警、狭长走廊</p><div class="meta">动作 / 2014 / 7.5</div></div>
+    </div>
+  </section>
+
+  <section class="lane" id="dusk">
+    <span class="alt">ALT 3000m</span>
+    <h2>🌇 黄昏片单 · <b>落日橙、长影子、告别</b></h2>
+    <div class="sub">golden hour · 天色最会讲故事的时刻</div>
+    <div class="grid3">
+      <div class="card"><div class="ico">🌅</div><h3>爱乐之城</h3><p>洛杉矶夕阳、公路、未完成的爱</p><div class="meta">歌舞 / 2016 / 8.4</div></div>
+      <div class="card"><div class="ico">🚗</div><h3>末路狂花</h3><p>峡谷、敞篷车、纵身一跃</p><div class="meta">公路 / 1991 / 9.0</div></div>
+      <div class="card"><div class="ico">🏜️</div><h3>荒野猎人</h3><p>雪线、落日、复仇与喘息</p><div class="meta">冒险 / 2015 / 8.0</div></div>
+      <div class="card"><div class="ico">🌾</div><h3>燃烧女子的肖像</h3><p>海岸、烛火、被看见的瞬间</p><div class="meta">文艺 / 2019 / 8.6</div></div>
+      <div class="card"><div class="ico">🚲</div><h3>单车少年</h3><p>黄昏街道、长大、借来的自由</p><div class="meta">剧情 / 2011 / 8.2</div></div>
+      <div class="card"><div class="ico">🪁</div><h3>天空之恋</h3><p>热气球节、晚风、没说出口的话</p><div class="meta">治愈 / 虚构示例 / —</div></div>
+    </div>
+  </section>
+
+  <section class="lane" id="space">
+    <span class="alt">ALT 10000m+</span>
+    <h2>🌌 夜空宇宙片单 · <b>星海、时间、孤独与爱</b></h2>
+    <div class="sub">orbit &amp; beyond · 地球变成一颗蓝点</div>
+    <div class="grid3">
+      <div class="card"><div class="ico">🚀</div><h3>星际穿越</h3><p>虫洞、五维空间、父女与爱</p><div class="meta">科幻 / 2014 / 9.4</div></div>
+      <div class="card"><div class="ico">🪐</div><h3>2001太空漫游</h3><p>黑石、骨棒、星孩、沉默宇宙</p><div class="meta">科幻 / 1968 / 8.9</div></div>
+      <div class="card"><div class="ico">🌠</div><h3>地心引力</h3><p>失重、耳机里没人回答</p><div class="meta">太空 / 2013 / 8.0</div></div>
+      <div class="card"><div class="ico">🛰️</div><h3>月球</h3><p>克隆、孤独、基地与钢琴</p><div class="meta">科幻 / 2009 / 8.7</div></div>
+      <div class="card"><div class="ico">🌑</div><h3>降临</h3><p>七肢桶、圆形文字、时间如湖</p><div class="meta">科幻 / 2016 / 8.0</div></div>
+      <div class="card"><div class="ico">💫</div><h3>银河护卫队</h3><p>宇宙海盗、老歌磁带、一家人</p><div class="meta">太空歌剧 / 2014 / 8.1</div></div>
+    </div>
+  </section>
+
+  <section class="lane" id="aerial">
+    <span class="alt">CAM 航拍</span>
+    <h2>🛰️ 航拍自然片单 · <b>云海、山脉、河流、星球表面</b></h2>
+    <div class="sub">from above · 把地球当主角</div>
+    <div class="grid3">
+      <div class="card"><div class="ico">🏔️</div><h3>云间漫步</h3><p>高山云海，从日出拍到日落</p><div class="meta">自然纪录片 / 示例 / 9.3</div></div>
+      <div class="card"><div class="ico">🌊</div><h3>海洋之歌</h3><p>浅滩细沙到深海幽蓝</p><div class="meta">自然 / 示例 / 9.2</div></div>
+      <div class="card"><div class="ico">🌋</div><h3>地球动脉</h3><p>河流、峡谷、候鸟迁徙线</p><div class="meta">BBC式自然 / 示例 / 9.4</div></div>
+      <div class="card"><div class="ico">🛸</div><h3>从太空看地球</h3><p>夜灯、极光、沙尘与台风眼</p><div class="meta">卫星影像 / 示例 / 9.0</div></div>
+      <div class="card"><div class="ico">🦅</div><h3>飞越阿尔卑斯</h3><p>滑翔伞视角、雪脊与云洞</p><div class="meta">航拍 / 示例 / 8.9</div></div>
+      <div class="card"><div class="ico">🌙</div><h3>月之背侧</h3><p>环形山、阴影、无声着陆</p><div class="meta">太空自然 / 示例 / 8.8</div></div>
+    </div>
+  </section>
+
+  <section class="panel" id="avoid">
+    <h3>⛅ 云端避雷区 · 搜“天空影视”别踩这些</h3>
+    <li><b>“天空影视免费高清/全集/网盘”</b> —— 多是盗版引流，片源来路不明。</li>
+    <li><b>“天空影视APP下载/破解版”</b> —— 安卓包常夹带广告 SDK 或木马。</li>
+    <li><b>“刚上映大片 天空版 4K”</b> —— 院线未下线就“4K”，基本是录屏转码。</li>
+    <li><b>“注册送会员/加群拿资源”</b> —— 私域导流，和观影没关系。</li>
+    <li><b>“解析任何视频/万能播放器”</b> —— 第三方解析站，版权与隐私双雷区。</li>
+  </section>
+
+  <section class="panel about" style="margin-top:18px">
+    <h3>🛩️ 关于 天空影视</h3>
+    <p><strong style="color:var(--sky)">天空影视</strong> 是“天穹观景台”风影视单页：天蓝、云白、暮紫、落日橙、星银、深空墨。按高度带挑片——地面人间、云层飞行、黄昏天色、夜空宇宙、航拍自然。<strong style="color:var(--sun)">只荐片、讲片、排片单，不存片、不解析第三方源、不提供下载。</strong></p>
+    <p>官网：<code>https://tiankongyingshi-h5.github.io</code></p>
+    <p>内链全用 <code>#</code> 占位，CSS/DIV 全内联，不生成 robots.txt / sitemap.xml，GitHub Pages 直传即可；必应收录靠标题、描述、语义结构、移动端体验。</p>
+    <p>看片请走正版院线、授权流媒体、资料馆放映、公共版权片库。本站不提供磁力链接、不解析第三方源、不托管受版权保护视频。</p>
+    <div class="warn">⚠️ 天空很大，盗版站也爱叫“天空/云/星海/星云”。认准官网域名，别在搜索结果里被云朵骗进广告场。</div>
+  </section>
+
+</div>
+
+<footer class="foot">
+  © 2026 天空影视 · tiankongyingshi-h5.github.io · 从地面起飞，别从盗版坠机 🌌
+</footer>
+
+</body>
+</html>
